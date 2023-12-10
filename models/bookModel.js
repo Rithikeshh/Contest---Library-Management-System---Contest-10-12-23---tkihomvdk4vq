@@ -1,4 +1,5 @@
 // Define the Book Schema
+const mongoose = require('mongoose')
 const bookSchema = new mongoose.Schema({
   // 1)   {
   // // Define the 'title' field
@@ -28,6 +29,30 @@ const bookSchema = new mongoose.Schema({
   //   // The data type of this field is a number
   //  // The default value is 1
   // }
+  title: {
+    type : String,
+    required: true,
+  },
+  author: {
+    type : String,
+    required: true
+  },
+  ISBN: {
+    type : String,
+    required: true,
+    unique: true
+  },
+  publishedYear: {
+    type : Number,
+    required: true
+  },
+  genre: {
+    type : String
+  },
+  copiesAvailable: {
+    type : Number
+  }
+
 });
 
 // Create and export the Book model
